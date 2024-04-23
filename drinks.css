@@ -170,35 +170,33 @@
     bottom: 35px;
   }
 
-.row1{
+  .row1{
     padding: 15px;
 }
 
 .row2{
     padding: 15px;
-    position: relative;
-    top: 50vh;
-    right: 23vh;
 }
 
 .row3{
     padding: 15px;
     position: relative;
-    right: 23vh;
+    top: 45vh;
+    right: 41vh;
 }
 
 .row4{
     padding: 15px;
     position: relative;
-    top: 50vh;
-    right: 44vh;
+    top: 45vh;
+    right: 40vh;
 }
 
 .row5{
     padding: 15px;
     position: relative;
-    top: 100vh;
-    right: 90vh;
+    top: 90vh;
+    right: 81vh;
 }
 
 
