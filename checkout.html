@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+  <div class="cart">
+  <h1>Shopping Cart</h1>
+  <ul id="cart-items">
+    <!-- Cart items will be dynamically inserted here -->
+  </ul>
+</div>
+  <div class="total">Total: <span id="total">0</span></div>
+
+  <div class="buttons">
+  <button class="btn" onclick="gobacktohome()">Return to Store</button>
+  <button class="btn" onclick="pcard()">PAY USING PCARD</button>
+  <button class="btn" onclick="gcash()">PAY USING GCASH</button>
+</div>
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = 0;
+    let cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+      incrementQuantity(item.price, cart.indexOf(item));
+      incrementQuantity(item.price, cart.indexOf(item));
+      decrementQuantity(item.price, cart.indexOf(item), true);
+      decrementQuantity(item.price, cart.indexOf(item), true);
+    });
+
+    function renderCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let total = 0;
+      let cartItems = document.getElementById('cart-items');
+      cartItems.innerHTML = '';
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        if (item.quantity != 0) {
+          cartItems.innerHTML += `<li>${item.item} ~ ₱${item.price} ~ Quantity: ${item.quantity} 
+          <button onclick="incrementQuantity(${item.price}, ${cart.indexOf(item)}, ${false})">+</button>
+          <button onclick="decrementQuantity(${item.price}, ${cart.indexOf(item)}, ${false})">-</button>
+          </li>`;
+        }
+      });
+      document.getElementById('total').innerText = total.toFixed(2); // Ensure total is displayed as a number with 2 decimal places
+    }
+
+    function checkout() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let cartItems = document.getElementById('cart-items').innerText;
+      let total = 0;
+      let itemList = cart.map(item => `${item.item} - $${item.price} - Quantity: ${item.quantity}`).join('\n');
+      cartItems = cartItems.replaceAll("+", ' ');
+      cartItems = cartItems.replaceAll("-", ' ');
+      alert("Items Bought:" + '\n' + cartItems);
+      // Clear the cart after checkout
+      localStorage.removeItem('cart');
+      renderCart(); // Update the cart display
+    }
+
+    function incrementQuantity(price, index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart[index].quantity++;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function decrementQuantity(price, index, onload) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      } else {
+        if (onload == false) {
+          if (confirm("Are you sure you want to remove this order?") == true) {
+            cart[index].item = "";
+            cart[index].price = 0;
+            cart[index].quantity = 0;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+          }
+        }
+      }
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      renderCart(); // Update the cart display
+    }
+
+    function gobacktohome() {
+      window.location.href = 'index.html';
+    }
+
+
+function pcard(){
+    window.location.href = 'pcard.html';
+}
+
+function gcash(){
+    window.location.href = 'gcash.html';
+
+}
+
+function previous(){
+    window.location.href = 'checkout.html'
+}
+
+  </script>
+</body>
+</html>

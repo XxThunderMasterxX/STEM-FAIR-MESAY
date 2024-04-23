@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pcard.css">
+</head>
+<body>
+    <div class="topmostpay">
+        <div id="rightsidepay">
+            <div class="payingopt">
+              <H1 class="title">MODE OF PAYMENT</H1>
+                <button class="btns" onclick="pcard()">PCARD</button>
+                <button class="btns" onclick="gcash()">GCASH</button>
+                <button class="btns" onclick="previous()">BACK</button>
+            </div>
+        </div>
+        
+        <div id="leftsidepay">
+        
+        </div>
+    </div>
+
+    <div class="bottommostpay">
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+          </ul>
+        <div>Total: <span id="total">0</span></div>
+        <button onclick="checkout()">CONFIRM PAY</button>
+        <button onclick="gobacktohome()">Return to Store</button>
+
+    </div>
+
+    <img class="scan" src="7b799797-f965-4200-81fc-827b948b2259-cover.png" alt="ohno" width="400">
+
+     
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = 0;
+    let cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+      incrementQuantity(item.price, cart.indexOf(item));
+      incrementQuantity(item.price, cart.indexOf(item));
+      decrementQuantity(item.price, cart.indexOf(item), true);
+      decrementQuantity(item.price, cart.indexOf(item), true);
+    });
+
+    function renderCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let total = 0;
+      let cartItems = document.getElementById('cart-items');
+      cartItems.innerHTML = '';
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        if (item.quantity != 0) {
+          cartItems.innerHTML += `<li>${item.item} ~ $${item.price} ~ Quantity: ${item.quantity} 
+          <button onclick="incrementQuantity(${item.price}, ${cart.indexOf(item)}, ${false})">+</button>
+          <button onclick="decrementQuantity(${item.price}, ${cart.indexOf(item)}, ${false})">-</button>
+          </li>`;
+
+        }
+      });
+      document.getElementById('total').innerText = total.toFixed(2); // Ensure total is displayed as a number with 2 decimal places
+
+    }
+
+    function checkout() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let cartItems = document.getElementById('cart-items').innerText;
+      let total = 0;
+      let itemList = cart.map(item => `${item.item} - ₱${item.price} - Quantity: ${item.quantity}`).join('\n');
+      cartItems = cartItems.replaceAll("+", ' ');
+      cartItems = cartItems.replaceAll("-", ' ');
+      alert("Items Bought:" + '\n' + cartItems);
+     
+      window.location.href = 'index.html';
+      laststop();
+     
+    }
+
+    function laststop(){
+         // Clear the cart after checkout
+      localStorage.removeItem('cart');
+      renderCart(); // Update the cart display
+    }
+
+    function incrementQuantity(price, index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart[index].quantity++;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function decrementQuantity(price, index, onload) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      } else {
+        if (onload == false) {
+          if (confirm("Are you sure you want to remove this order?") == true) {
+            cart[index].item = "";
+            cart[index].price = 0;
+            cart[index].quantity = 0;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+          }
+        }
+      }
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      renderCart(); // Update the cart display
+    }
+
+    function gobacktohome() {
+      window.location.href = 'index.html';
+    }
+  </script>
+    
+
+</body>
+</html>

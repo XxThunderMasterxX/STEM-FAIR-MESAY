@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteen</title>
+    <link rel="stylesheet" href="snack.css">
+    <script src="script.js"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <div class="topcont">
+            <div class="menu-bar">
+                <div class="plogo">
+                    <img src="Logo.png" alt="lmao" width="200">
+                </div>
+                <div class="mealselect">
+                    <button onclick="redirectMeal()" id="button1" class="buttonss">MEALS</button>
+                </div>
+                <div class="snackselect">
+                    <button onclick="redirectSnack()" id="button2" class="buttonss">SNACKS</button>
+                </div>
+                <div class="drinkselect">
+                    <button onclick="redirectDrink()" id="button3" class="buttonss">DRINKS</button>
+                </div>
+            </div>
+           
+            <div class="selection">
+                <div class="row1">
+                    <div class="m1">
+                        <p class="price"><b>Cupcakes</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 60</p>
+                        <button class="btn" onclick="orderItem('Cupcakes', 60)">ORDER</button>
+                        
+                    </div>
+                    <div class="m2">
+                        <p class="price"><b>Fries</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 50</p>
+                        <button class="btn" onclick="orderItem('Fries', 50)">ORDER</button>
+                        
+                    </div>
+                </div>
+               
+                <div class="row2">
+                    <div class="m3">
+                        <p class="price"><b>Waffles</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 30</p>
+                        <button class="btn" onclick="orderItem('Waffles', 30)">ORDER</button>
+                        
+                    </div>
+                    <div class="m4">
+                        <p class="price"><b>Churros</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 40</p>
+                        <button class="btn" onclick="orderItem('Churros', 40)">ORDER</button>
+                        
+                    </div>
+                </div>
+
+                <div class="row3">
+                    <div class="m5">
+                        <p class="price"><b>Skyflakes</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 60</p>
+                        <button class="btn" onclick="orderItem('Skyflakes', 60)">ORDER</button>
+                       
+                    </div>
+                    <div class="m6">
+                        <p class="price"><b>Candy</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 20</p>
+                        <button class="btn" onclick="orderItem('Candy', 20)">ORDER</button>
+                        
+                    </div>
+                </div>
+
+                <div class="row4">
+                    <div class="m7">
+                        <p class="price"><b>Ice cream</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 60</p>
+                        <button class="btn" onclick="orderItem('Ice Cream', 60)">ORDER</button>
+                        
+                    </div>
+                    <div class="m8">
+                        <p class="price"><b>Cake</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 40</p>
+                        <button class="btn" onclick="orderItem('Cake', 40)">ORDER</button>
+                        
+                    </div>
+                </div>
+
+                <div class="row5">
+                    <div class="m9">
+                        <p class="price"><b>Turron</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="">Php 50</p>
+                        <button class="btn" onclick="orderItem('Turron', 50)">ORDER</button>
+                        
+                    </div>
+                    <div class="m10">
+                        <p class="price"><b>Hotdog</b></p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <p class="price">Php 50</p> 
+                        <button class="btn" onclick="orderItem('Hotdog', 50)">ORDER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="totalbar">
+            <ul id="orderList">
+            </ul>
+            <br>
+            <p>Total: <span id="total">0</span> pesos</p>
+            <button class="pay" onclick="redirectToCheckout()">PAY NOW</button>
+        </div>
+
+        <script>
+            window.onload = displaytotal();
+
+            function displaytotal(){
+                var fulltotal = localStorage.getItem("fulltotalests");
+
+                document.getElementById("total").innerHTML = fulltotal;
+                total = Number(fulltotal);
+
+                var ordertotal = localStorage.getItem("fullorderList");
+
+                document.getElementById("orderList").innerHTML = ordertotal;
+            }
+        </script>
+    </div>
+
+</body>
+</html>

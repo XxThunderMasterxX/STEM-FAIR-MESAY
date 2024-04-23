@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="meal.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="topcont">
+            <div class="menu-bar">
+                <div class="mealselect">
+                    <button onclick="redirectAdmin3()" id="button1" class="buttonss">MEALS</button>
+                </div>
+                <div class="snackselect">
+                    <button onclick="redirectAdmin1()" id="button2" class="buttonss">SNACKS</button>
+                </div>
+                <div class="drinkselect">
+                    <button onclick="redirectAdmin2()" id="button3" class="buttonss">DRINKS</button>
+                </div>
+            </div>
+            
+            <div class="selection">
+                <div class="row1">
+                    <div class="m1">
+                        <p>60 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <button id="btn1" onclick="orderItem('Tacos', 60)">ORDER</button><br>
+                        <button id="enable1" onclick="enable1()">Enable</button>
+                        <button id="disable1" onclick="disable1()">Disable</button>
+                    </div>
+                    <div class="m2">
+                        <p>50 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <button id="btn2" onclick="orderItem('Pizza', 50)">ORDER</button><br>
+                        <button id="enable2" onclick="enable2()">Enable</button>
+                        <button id="disable2" onclick="disable2()">Disable</button>
+                    </div>
+                </div>
+               
+                <div class="row2">
+                    <div class="m3">   
+                        <p>30 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br> 
+                        <button id="btn3" onclick="orderItem('Chicken', 30)">ORDER</button><br>
+                        <button id="enable3" onclick="enable3()">Enable</button>
+                        <button id="disable3" onclick="disable3()">Disable</button>
+                    </div>
+                    <div class="m4">
+                        <p>40 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <button id="btn4" onclick="orderItem('Burgers', 40)">ORDER</button><br>
+                        <button id="enable4" onclick="enable4()">Enable</button>
+                        <button id="disable4" onclick="disable4()">Disable</button>
+                    </div>
+                </div>
+
+                <div class="row3">
+                    <div class="m5">
+                        <p>60 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <button id="btn5" onclick="orderItem('Quesadilla', 60)">ORDER</button><br>
+                        <button id="enable5" onclick="enable5()">Enable</button>
+                        <button id="disable5" onclick="disable5()">Disable</button>
+                    </div>
+                    <div class="m6">
+                        <p>20 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br> 
+                        <button id="btn6" onclick="orderItem('Fish', 20)">ORDER</button><br>
+                        <button id="enable6" onclick="enable6()">Enable</button>
+                        <button id="disable6" onclick="disable6()">Disable</button>
+                    </div>
+                </div>
+
+                <div class="row4">
+                    <div class="m7">
+                        <p>60 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <button id="btn7" onclick="orderItem('Caldereta', 60)">ORDER</button><br>
+                        <button id="enable7" onclick="enable7()">Enable</button>
+                        <button id="disable7" onclick="disable7()">Disable</button>
+                    </div>
+                    <div class="m8">
+                        <p>40 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <button id="btn8" onclick="orderItem('Bulalo', 40)">ORDER</button><br>
+                        <button id="enable8" onclick="enable8()">Enable</button>
+                        <button id="disable8" onclick="disable8()">Disable</button>
+                    </div>
+                </div>
+
+                <div class="row5">
+                    <div class="m9">
+                        <p>50 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br>
+                        <button id="btn9" onclick="orderItem('Sandwich', 50)">ORDER</button><br>
+                        <button id="enable9" onclick="enable9()">Enable</button>
+                        <button id="disable9" onclick="disbale9()">Disable</button>
+                    </div>
+                    <div class="m10">
+                        <p>50 Pesos</p>
+                        <img class="foodpics" src="images.jpg" alt="lmao" width="40"><br> 
+                        <button id="btn10" onclick="orderItem('Chicken Tenders', 50)">ORDER</button><br>
+                        <button id="enable10" onclick="enable10()">Enable</button>
+                        <button id="disable10" onclick="disable10()">Disable</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

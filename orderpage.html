@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <div id="page">
+            <div id="sidebar">
+                <img src="pisaylogo.png" alt="resma">
+                <br>
+                <h1>Welcome to the Digitalized Cashier System of 9-Sodium PSHS-SMC!</h1>
+                <br><br>
+                <p>What can we get you?</p>
+            </div>
+            <div id="orders">
+            <!--JC (suggestion): Take inspo from mcdo. Take out sidebar put it as header, scroll on the left for categorizing of menu, middle is the options of the categories and the right side as reciept of the order-->
+                <div id="ordered">
+                    <div id="order1">
+                        <img src="order1.png" alt="ice tea">
+                        <br>
+                        <button onclick="addtoMenu1()">Ice Tea</button>
+                        <h1>₱20.00</h1>
+                    </div>
+                    <div id="order2">
+                        <img src="order2.png" alt="cheeseburger">
+                        <br>
+                        <button onclick="addtoMenu2()">Cheeseburger</button>
+                        <h1>₱50.00</h1>
+                    </div>
+                    <div id="order3">
+                        <img src="order3.png" alt="apple">
+                        <br>
+                        <button onclick="addtoMenu3()">Apple</button>
+                        <h1>₱25.00</h1>
+                    </div>
+                    <div id="order3">
+                        <img src="order3.png" alt="apple">
+                        <br>
+                        <button onclick="addtoMenu3()">Apple</button>
+                        <h1>₱25.00</h1>
+                    </div>
+                    <div id="order3">
+                        <img src="order3.png" alt="apple">
+                        <br>
+                        <button onclick="addtoMenu3()">Apple</button>
+                        <h1>₱25.00</h1>
+                    </div>
+                </div>
+                <!--Task for lewan: work on moving OrderTotal to the right of page div and getting orders to line up horizontally-->
+                <div id="OrderTotal">
+                    <h1>Order Total</h1>
+                    <h2 id="Orders1">Your Orders will Appear Here</h2>
+                    <h2 id="Orders2"></h2>
+                    <h2 id="Orders3"></h2>
+                    <hr>
+                    <h1>Payment Method:</h1>
+                    <img id="gcashreceipt" src="gcash.jpg" alt="PaythruGcash" onclick="payment()">
+                    <img id="landbankcard" src="landbank.jpg" alt="PaythruCard" onclick="pay">
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+
+        <!--hi jov if you're reading this send the file sa gc pls. Ty :>-->
+    </body>
+</html>

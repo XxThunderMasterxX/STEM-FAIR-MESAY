@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#start{
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#start h1{
+    font-size: 2em;
+    font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#start button{
+    margin-top: 0px;
+    width: 90vw;
+    height: 20vh;
+    background-color: rgba(173, 216, 230, 0);
+    font-size: 3em;
+    border:none;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    border: 1px solid black;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgba(black );
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+#start button:active{
+    transition-delay: 0s;
+    background-color: red;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);  
+}
+
+#start #login{
+    top: 10vh;
+    width: 20vw;
+    height: 10vh;
+    border: 1px solid black;
+}
+
+#login{
+    top: 10vh;
+}
+
+/*Admin Login Page*/
+
+#signin-container{
+    background-color: lightblue;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}   
+
+#signin{
+    margin-left: 30vw;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+fieldset{
+    height: 40vh;
+    width: 40vw;
+    background-color: rgba(255, 255, 255, 0.406);
+}
+
+#submit{
+    position: relative;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    outline: none;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    
+}
+
+#submit:disabled {
+    pointer-events: none;
+  }
+  
+#submit:active {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+#submit:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+/*Start of Orderpage*/
+
+/*sidebar*/
+#sidebar{
+    height: 70vh;
+    width: 25vw;
+    padding: 30px;
+    border-radius: 10px;
+    background-image:linear-gradient(white,rgba(0, 0, 255, 0.18) );
+    text-align: center;
+    color: black;
+    margin: 5px;
+}
+
+#sidebar h1{
+    font-size: 1em;
+}
+
+#sidebar p{
+    font-size: 1em;
+}
+
+#page{
+    display: flex;
+}
+
+
+/*menu area*/
+#orders{
+    height: 70vh;
+    width: 70vw;
+    background-image: linear-gradient(lightblue,rgba(0, 0, 255, 0.269));
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#orders #ordered{
+    overflow:auto;
+    height: 70vh;
+    width: 70vw;
+}
+
+#orders #ordered div{
+    height: 35vh;
+    width: 30vw;
+    background-color: rgba(255, 255, 255, 0.582);
+    border-radius: 30px;
+    text-align: center;
+    float: left;
+}
+
+#page #orders button{
+    height: 3vh;
+    width: 15vw;
+    font-size: 1em;
+    background-color: rgba(173, 216, 230, 0.815);
+    border: 0;
+}
+
+#page #orders button:hover{
+    background-color: rgba(0,0,255, 0.269);
+    transition-delay: 0.1ms;
+}
+
+#page #orders img{
+    height: 100px;
+}
+
+/*payment area*/
+
+#page #orders #OrderTotal{
+    height: 20vh;
+    width: 90vw;
+    position: absolute;
+    top: 83vh;
+    right: 2vw;
+    background-color: black;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#page #orders #OrderTotal img{
+    width:  75px;
+    height: 50px;
+    border: 0.1px solid black;
+    border-radius: 25px;
+}
+
+
