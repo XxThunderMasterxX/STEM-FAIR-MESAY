@@ -57,3 +57,14 @@
     transform: scale(1.1);  
     text-decoration: underline;
 }
+
+.tapvid{
+    position: relative;
+    left: 100vh;
+    top: 1vh;
+}
+
+.tap{
+    background-color: yellow;
+    
+}
